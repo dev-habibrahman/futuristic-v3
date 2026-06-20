@@ -1,0 +1,719 @@
+<?php
+/**
+ * NOVARA SYSTEMS — index.php
+ * Flagship pre-launch landing page.
+ *
+ * This file is .php ONLY to enable the tiny inline conditional
+ * that shows a success / error banner after the email form POSTs
+ * to subscribe.php and redirects back with ?subscribed=1 or ?error=1.
+ *
+ * No other server-side logic lives here. No JavaScript anywhere.
+ */
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#05060A" />
+    <meta name="description" content="NOVARA SYSTEMS — Engineering Tomorrow's Signal. Precision-engineered intelligent systems for the next era of aerospace and deep-tech infrastructure." />
+    <title>NOVARA SYSTEMS — Engineering Tomorrow's Signal</title>
+
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Favicon as inline SVG data URI (no extra file needed) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='none' stroke='%2300E5FF' stroke-width='1.5'/><path d='M10 22V10l12 12V10' fill='none' stroke='%2300E5FF' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+</head>
+<body>
+
+<!-- === GLOBAL BACKGROUND LAYERS === -->
+<!-- These sit behind everything and create the drifting starfield + nebula mood. -->
+<div class="bg-layer bg-nebula" aria-hidden="true"></div>
+<div class="bg-layer bg-stars-1" aria-hidden="true"></div>
+<div class="bg-layer bg-stars-2" aria-hidden="true"></div>
+<div class="bg-layer bg-stars-3" aria-hidden="true"></div>
+<div class="bg-layer bg-grain" aria-hidden="true"></div>
+
+<!-- === NAVIGATION === -->
+<header class="nav-wrap">
+    <nav class="nav" aria-label="Primary">
+        <a href="#home" class="nav-brand" aria-label="NOVARA SYSTEMS — Home">
+            <!-- Inline SVG logo mark for instant render -->
+            <svg class="nav-logo" viewBox="0 0 40 40" aria-hidden="true">
+                <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+                <ellipse cx="20" cy="20" rx="18" ry="7" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4" transform="rotate(25 20 20)"/>
+                <path d="M13 28V12l14 16V12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="nav-wordmark">NOVARA <span class="nav-wordmark-dim">SYSTEMS</span></span>
+        </a>
+
+        <!-- Desktop nav links -->
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#vision">Vision</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <a href="#notify" class="nav-cta">Get Early Access</a>
+
+        <!-- Mobile hamburger: hidden checkbox + label (pure CSS toggle) -->
+        <input type="checkbox" id="nav-toggle" class="visually-hidden" aria-label="Toggle mobile menu" />
+        <label for="nav-toggle" class="nav-hamburger" aria-hidden="true">
+            <span></span><span></span><span></span>
+        </label>
+
+        <!-- Mobile menu panel -->
+        <div class="mobile-menu" aria-label="Mobile navigation">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#notify">Get Early Access</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<main>
+
+<!-- ============================================================= -->
+<!-- === SECTION 1 — HERO (#home) ================================= -->
+<!-- ============================================================= -->
+<section id="home" class="section section-hero">
+    <div class="hero-grid">
+        <div class="hero-copy reveal">
+            <div class="eyebrow">
+                <span class="eyebrow-dot" aria-hidden="true"></span>
+                SYSTEM STATUS · LAUNCHING Q3 2026
+            </div>
+            <h1 class="hero-title">
+                The Next Signal in<br />
+                <span class="grad-text">Intelligent Systems.</span>
+            </h1>
+            <p class="hero-sub">
+                NOVARA SYSTEMS engineers the hardware, firmware, and orchestration layers
+                that power the next generation of autonomous aerospace infrastructure.
+                Precision-built. Mission-critical. Ready for orbit.
+            </p>
+            <div class="hero-actions">
+                <a href="#notify" class="btn btn-primary btn-glow">
+                    Notify Me at Launch
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <a href="#about" class="btn btn-ghost">Explore Capabilities</a>
+            </div>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">Headquarters</span>
+                    <span class="hero-meta-value">Vandenberg · CA</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">Founded</span>
+                    <span class="hero-meta-value">MMXXIV</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">Clearance</span>
+                    <span class="hero-meta-value">Pre-Release</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-art reveal" aria-hidden="true">
+            <!-- Hero-grade SVG: orbiting signal rings -->
+            <svg class="hero-orbits" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#5EE7FF" stop-opacity="0.9"/>
+                        <stop offset="40%" stop-color="#00E5FF" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#00E5FF" stop-opacity="0"/>
+                    </radialGradient>
+                    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00E5FF" stop-opacity="0.9"/>
+                        <stop offset="50%" stop-color="#7C3AED" stop-opacity="0.6"/>
+                        <stop offset="100%" stop-color="#00E5FF" stop-opacity="0.2"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="300" cy="300" r="140" fill="url(#coreGlow)"/>
+                <circle cx="300" cy="300" r="14" fill="#F4F6FB"/>
+                <circle cx="300" cy="300" r="6" fill="#00E5FF"/>
+                <!-- Orbit rings -->
+                <g class="orbit orbit-1">
+                    <ellipse cx="300" cy="300" rx="220" ry="90" fill="none" stroke="url(#ringGrad)" stroke-width="1.2"/>
+                    <circle cx="520" cy="300" r="5" fill="#5EE7FF"/>
+                </g>
+                <g class="orbit orbit-2">
+                    <ellipse cx="300" cy="300" rx="260" ry="130" fill="none" stroke="url(#ringGrad)" stroke-width="1" opacity="0.7" transform="rotate(35 300 300)"/>
+                    <circle cx="40" cy="300" r="4" fill="#C084FC"/>
+                </g>
+                <g class="orbit orbit-3">
+                    <ellipse cx="300" cy="300" rx="180" ry="220" fill="none" stroke="url(#ringGrad)" stroke-width="1" opacity="0.5" transform="rotate(-20 300 300)"/>
+                    <circle cx="300" cy="80" r="3" fill="#FFB454"/>
+                </g>
+                <!-- Signal waveform -->
+                <path class="wave" d="M60 300 Q 150 260, 240 300 T 420 300 T 540 300" fill="none" stroke="#00E5FF" stroke-width="1.5" opacity="0.4"/>
+                <path class="wave wave-2" d="M60 300 Q 150 340, 240 300 T 420 300 T 540 300" fill="none" stroke="#7C3AED" stroke-width="1.5" opacity="0.3"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to capabilities">
+        <span class="scroll-indicator-label">SCROLL</span>
+        <span class="scroll-indicator-line" aria-hidden="true"></span>
+    </a>
+</section>
+
+
+<!-- ============================================================= -->
+<!-- === SECTION 2 — CAPABILITIES (#about) ======================== -->
+<!-- ============================================================= -->
+<section id="about" class="section section-about">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="eyebrow">01 / CAPABILITIES</div>
+            <h2 class="section-title">Engineered for the<br /><span class="grad-text">edge of the possible.</span></h2>
+            <p class="section-lede">
+                Three disciplines. One integrated stack. From silicon to orbit,
+                NOVARA designs systems that refuse to compromise.
+            </p>
+        </div>
+
+        <div class="about-grid">
+            <!-- Card 1 -->
+            <article class="card reveal">
+                <div class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="24" cy="24" r="6"/>
+                        <path d="M24 4v6M24 38v6M4 24h6M38 24h6M9 9l4 4M35 35l4 4M9 39l4-4M35 13l4-4"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Precision Engineering</h3>
+                <p class="card-text">
+                    Sub-micron mechanical tolerances paired with custom ASIC firmware.
+                    Every component is designed, fabricated, and validated in-house.
+                </p>
+                <div class="card-tag">HARDWARE · FIRMWARE</div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card reveal">
+                <div class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 24c4-8 10-8 14 0s10 8 14 0 6-4 8 0"/>
+                        <path d="M6 32c4-8 10-8 14 0s10 8 14 0 6-4 8 0" opacity="0.5"/>
+                        <path d="M6 16c4-8 10-8 14 0s10 8 14 0 6-4 8 0" opacity="0.5"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Real-Time Intelligence</h3>
+                <p class="card-text">
+                    Onboard inference at microsecond latency. Sensor fusion, adaptive filtering,
+                    and closed-loop control — all running without a round-trip to ground.
+                </p>
+                <div class="card-tag">EDGE · INFERENCE</div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card reveal">
+                <div class="card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="8" y="8" width="10" height="10" rx="1"/>
+                        <rect x="30" y="8" width="10" height="10" rx="1"/>
+                        <rect x="8" y="30" width="10" height="10" rx="1"/>
+                        <rect x="30" y="30" width="10" height="10" rx="1"/>
+                        <path d="M18 13h12M13 18v12M35 18v12M18 35h12"/>
+                    </svg>
+                </div>
+                <h3 class="card-title">Built for Scale</h3>
+                <p class="card-text">
+                    From a single prototype to a constellation of thousands.
+                    Our architecture is modular, field-upgradable, and production-proven.
+                </p>
+                <div class="card-tag">CONSTELLATION · MFG</div>
+            </article>
+
+            <!-- Supporting image card -->
+            <div class="about-photo reveal" aria-hidden="true">
+                <!--
+                  PLACEHOLDER: Replace with a real, non-AI photograph of a
+                  precision engineering lab / clean room / tech bench.
+                  Recommended: dark, moody, shallow depth of field.
+                -->
+                <img src="assets/img/about-tech-lab.webp"
+                     alt="Precision engineering laboratory at NOVARA Systems"
+                     loading="lazy"
+                     onerror="this.style.display='none'" />
+                <div class="about-photo-fallback" aria-hidden="true">
+                    <span>SYSTEMS LAB · BLDG 04</span>
+                </div>
+                <div class="about-photo-overlay"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================= -->
+<!-- === SECTION 3 — STATS (#stats) =============================== -->
+<!-- ============================================================= -->
+<section id="stats" class="section section-stats">
+    <!-- Subtle background photo, heavily overlaid -->
+    <div class="stats-bg" aria-hidden="true">
+        <!--
+          PLACEHOLDER: Replace with a real photograph of a server room,
+          control room, or satellite array. Very dark, heavily desaturated.
+        -->
+        <img src="assets/img/stats-server-room.webp"
+             alt="NOVARA operations control center"
+             loading="lazy"
+             onerror="this.style.display='none'" />
+    </div>
+
+    <div class="container">
+        <div class="section-head section-head-center reveal">
+            <div class="eyebrow">02 / BY THE NUMBERS</div>
+            <h2 class="section-title">The record so far.</h2>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat reveal">
+                <div class="stat-number">240<span class="stat-plus">+</span></div>
+                <div class="stat-label">Systems Engineered</div>
+                <div class="stat-sub">across 14 programs</div>
+            </div>
+            <div class="stat reveal">
+                <div class="stat-number">99.98<span class="stat-pct">%</span></div>
+                <div class="stat-label">Uptime Target</div>
+                <div class="stat-sub">mission-critical SLA</div>
+            </div>
+            <div class="stat reveal">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Countries</div>
+                <div class="stat-sub">operational footprint</div>
+            </div>
+            <div class="stat reveal">
+                <div class="stat-number">24<span class="stat-slash">/</span>7</div>
+                <div class="stat-label">Monitoring</div>
+                <div class="stat-sub">NOC · Vandenberg</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================= -->
+<!-- === SECTION 4 — GALLERY (#gallery) =========================== -->
+<!-- ============================================================= -->
+<section id="gallery" class="section section-gallery">
+    <div class="container">
+        <div class="section-head reveal">
+            <div class="eyebrow">03 / INSIDE NOVARA</div>
+            <h2 class="section-title">Where the work<br /><span class="grad-text">actually happens.</span></h2>
+        </div>
+
+        <div class="gallery-grid">
+            <!--
+              GALLERY PLACEHOLDERS — Replace each src with a real, non-AI photograph.
+              Recommended aesthetic: dark, cinematic, shallow DOF, cool color grade.
+              Each image uses a gradient overlay + caption that reveals on hover.
+            -->
+
+            <figure class="gallery-item gallery-item-lg reveal" tabindex="0">
+                <img src="assets/img/gallery-systems-lab.webp"
+                     alt="NOVARA systems integration laboratory"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('gallery-fallback')" />
+                <div class="gallery-caption">
+                    <span class="gallery-caption-tag">01</span>
+                    <span class="gallery-caption-title">Systems Lab</span>
+                    <span class="gallery-caption-sub">Integration · Bldg 04</span>
+                </div>
+            </figure>
+
+            <figure class="gallery-item reveal" tabindex="0">
+                <img src="assets/img/gallery-night-operations.webp"
+                     alt="Night operations at NOVARA launch site"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('gallery-fallback')" />
+                <div class="gallery-caption">
+                    <span class="gallery-caption-tag">02</span>
+                    <span class="gallery-caption-title">Night Ops</span>
+                </div>
+            </figure>
+
+            <figure class="gallery-item reveal" tabindex="0">
+                <img src="assets/img/gallery-precision-assembly.webp"
+                     alt="Precision mechanical assembly"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('gallery-fallback')" />
+                <div class="gallery-caption">
+                    <span class="gallery-caption-tag">03</span>
+                    <span class="gallery-caption-title">Precision Assembly</span>
+                </div>
+            </figure>
+
+            <figure class="gallery-item reveal" tabindex="0">
+                <img src="assets/img/gallery-control-room.webp"
+                     alt="Mission control room"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('gallery-fallback')" />
+                <div class="gallery-caption">
+                    <span class="gallery-caption-tag">04</span>
+                    <span class="gallery-caption-title">Mission Control</span>
+                </div>
+            </figure>
+
+            <figure class="gallery-item gallery-item-wide reveal" tabindex="0">
+                <img src="assets/img/gallery-satellite-array.webp"
+                     alt="Satellite antenna array at dusk"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('gallery-fallback')" />
+                <div class="gallery-caption">
+                    <span class="gallery-caption-tag">05</span>
+                    <span class="gallery-caption-title">Antenna Array</span>
+                    <span class="gallery-caption-sub">Vandenberg SFB</span>
+                </div>
+            </figure>
+
+            <figure class="gallery-item reveal" tabindex="0">
+                <img src="assets/img/gallery-engineering-bench.webp"
+                     alt="Engineering bench with prototype hardware"
+                     loading="lazy"
+                     onerror="this.parentElement.classList.add('gallery-fallback')" />
+                <div class="gallery-caption">
+                    <span class="gallery-caption-tag">06</span>
+                    <span class="gallery-caption-title">Engineering Bench</span>
+                </div>
+            </figure>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================= -->
+<!-- === SECTION 5 — VISION (#vision) ============================= -->
+<!-- ============================================================= -->
+<section id="vision" class="section section-vision">
+    <div class="container vision-grid">
+        <div class="vision-copy reveal">
+            <div class="eyebrow">04 / VISION</div>
+            <h2 class="vision-title">
+                Designed in the dark.<br />
+                <span class="grad-text">Built for what's next.</span>
+            </h2>
+            <p class="vision-text">
+                We believe the most important systems of the next decade
+                will be built quietly, by small teams, with an obsession
+                for craft. NOVARA exists to prove that thesis — one
+                mission at a time.
+            </p>
+            <a href="#process" class="btn btn-ghost">
+                See how we build
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+        </div>
+
+        <div class="vision-art reveal" aria-hidden="true">
+            <!-- Constellation / orbit SVG -->
+            <svg class="constellation" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <radialGradient id="constGlow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#7C3AED" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <circle cx="250" cy="250" r="220" fill="url(#constGlow)"/>
+                <!-- Constellation lines -->
+                <g stroke="#C084FC" stroke-width="1" opacity="0.6" fill="none">
+                    <path d="M120 150 L 220 120 L 310 180 L 380 140 L 420 240 L 360 330 L 280 360 L 180 340 L 110 260 Z"/>
+                    <path d="M220 120 L 280 360" opacity="0.4"/>
+                    <path d="M310 180 L 180 340" opacity="0.4"/>
+                    <path d="M380 140 L 110 260" opacity="0.4"/>
+                </g>
+                <!-- Constellation nodes -->
+                <g fill="#F4F6FB">
+                    <circle cx="120" cy="150" r="3"/>
+                    <circle cx="220" cy="120" r="4" fill="#5EE7FF"/>
+                    <circle cx="310" cy="180" r="3"/>
+                    <circle cx="380" cy="140" r="3.5" fill="#FFB454"/>
+                    <circle cx="420" cy="240" r="3"/>
+                    <circle cx="360" cy="330" r="3"/>
+                    <circle cx="280" cy="360" r="4" fill="#5EE7FF"/>
+                    <circle cx="180" cy="340" r="3"/>
+                    <circle cx="110" cy="260" r="3"/>
+                </g>
+                <!-- Outer orbit ring -->
+                <circle cx="250" cy="250" r="230" fill="none" stroke="#C084FC" stroke-width="0.8" opacity="0.3" stroke-dasharray="2 6"/>
+                <circle cx="250" cy="250" r="180" fill="none" stroke="#00E5FF" stroke-width="0.8" opacity="0.2" stroke-dasharray="1 8"/>
+            </svg>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================= -->
+<!-- === SECTION 6 — PROCESS (#process) =========================== -->
+<!-- ============================================================= -->
+<section id="process" class="section section-process">
+    <div class="container">
+        <div class="section-head section-head-center reveal">
+            <div class="eyebrow">05 / HOW IT WORKS</div>
+            <h2 class="section-title">From signal to system.</h2>
+            <p class="section-lede">
+                A four-phase engagement model. Transparent, rigorous, repeatable.
+            </p>
+        </div>
+
+        <div class="process-timeline">
+            <!-- Connecting line (SVG) -->
+            <svg class="process-line" viewBox="0 0 1200 20" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="0" y1="10" x2="1200" y2="10" stroke="url(#lineGrad)" stroke-width="1" stroke-dasharray="4 6"/>
+                <defs>
+                    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#00E5FF" stop-opacity="0"/>
+                        <stop offset="20%" stop-color="#00E5FF" stop-opacity="0.8"/>
+                        <stop offset="80%" stop-color="#7C3AED" stop-opacity="0.8"/>
+                        <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+                    </linearGradient>
+                </defs>
+            </svg>
+
+            <article class="process-step reveal">
+                <div class="process-marker" aria-hidden="true">
+                    <span class="process-marker-num">01</span>
+                    <div class="process-marker-pulse"></div>
+                </div>
+                <div class="process-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 16c3-6 7-6 10 0s7 6 10 0 5-3 6 0"/>
+                    </svg>
+                </div>
+                <h3 class="process-title">Signal Received</h3>
+                <p class="process-text">
+                    Mission requirements captured. Technical feasibility review within 72 hours.
+                </p>
+            </article>
+
+            <article class="process-step reveal">
+                <div class="process-marker" aria-hidden="true">
+                    <span class="process-marker-num">02</span>
+                    <div class="process-marker-pulse"></div>
+                </div>
+                <div class="process-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="16" cy="16" r="10"/>
+                        <circle cx="16" cy="16" r="4"/>
+                        <path d="M16 2v4M16 26v4M2 16h4M26 16h4"/>
+                    </svg>
+                </div>
+                <h3 class="process-title">System Calibration</h3>
+                <p class="process-text">
+                    Architecture lock. Hardware-in-the-loop simulation. Firmware baseline signed.
+                </p>
+            </article>
+
+            <article class="process-step reveal">
+                <div class="process-marker" aria-hidden="true">
+                    <span class="process-marker-num">03</span>
+                    <div class="process-marker-pulse"></div>
+                </div>
+                <div class="process-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 4v16M10 14l6 6 6-6"/>
+                        <path d="M6 24h20M6 28h20"/>
+                    </svg>
+                </div>
+                <h3 class="process-title">Precision Deployment</h3>
+                <p class="process-text">
+                    Build, integration, and test. Field deployment with white-glove commissioning.
+                </p>
+            </article>
+
+            <article class="process-step reveal">
+                <div class="process-marker" aria-hidden="true">
+                    <span class="process-marker-num">04</span>
+                    <div class="process-marker-pulse"></div>
+                </div>
+                <div class="process-icon" aria-hidden="true">
+                    <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="16" cy="16" r="12"/>
+                        <path d="M16 8v8l5 3"/>
+                    </svg>
+                </div>
+                <h3 class="process-title">Continuous Monitoring</h3>
+                <p class="process-text">
+                    24/7 NOC coverage. OTA firmware updates. Telemetry-driven optimization.
+                </p>
+            </article>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================= -->
+<!-- === SECTION 7 — NOTIFY (#notify) ============================= -->
+<!-- ============================================================= -->
+<section id="notify" class="section section-notify">
+    <!-- Radar ping background -->
+    <div class="notify-bg" aria-hidden="true">
+        <svg class="radar-ping" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="300" cy="300" r="40" fill="#00E5FF" opacity="0.8"/>
+            <circle cx="300" cy="300" r="80" fill="none" stroke="#00E5FF" stroke-width="1" class="ping ping-1"/>
+            <circle cx="300" cy="300" r="140" fill="none" stroke="#00E5FF" stroke-width="1" class="ping ping-2"/>
+            <circle cx="300" cy="300" r="200" fill="none" stroke="#00E5FF" stroke-width="1" class="ping ping-3"/>
+            <circle cx="300" cy="300" r="260" fill="none" stroke="#00E5FF" stroke-width="1" class="ping ping-4"/>
+            <!-- Crosshairs -->
+            <line x1="300" y1="40" x2="300" y2="560" stroke="#00E5FF" stroke-width="0.5" opacity="0.3"/>
+            <line x1="40" y1="300" x2="560" y2="300" stroke="#00E5FF" stroke-width="0.5" opacity="0.3"/>
+        </svg>
+    </div>
+
+    <div class="container notify-inner">
+        <div class="section-head section-head-center reveal">
+            <div class="eyebrow">06 / STAY IN ORBIT</div>
+            <h2 class="section-title">
+                Engineering Tomorrow's Signal.<br />
+                <span class="grad-text">Be first in line.</span>
+            </h2>
+            <p class="section-lede">
+                Join the pre-launch list. We'll reach out the moment NOVARA opens its doors.
+                No spam. No noise. One signal when it matters.
+            </p>
+        </div>
+
+        <!-- === PHP SUCCESS / ERROR BANNERS === -->
+        <!-- These conditionals render ONLY when subscribe.php redirects back with a flag. -->
+        <?php if (isset($_GET['subscribed']) && $_GET['subscribed'] === '1'): ?>
+            <div class="form-banner form-banner-success reveal" role="status">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5L20 7" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div>
+                    <strong>Signal received.</strong>
+                    <span>You're on the list. We'll be in touch at launch.</span>
+                </div>
+            </div>
+        <?php elseif (isset($_GET['error']) && $_GET['error'] === '1'): ?>
+            <div class="form-banner form-banner-error reveal" role="alert">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 8v5M12 16v.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                <div>
+                    <strong>Transmission failed.</strong>
+                    <span>We couldn't process that address. Please try again.</span>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <form class="notify-form reveal" method="POST" action="subscribe.php" novalidate>
+            <!-- Honeypot field for basic bot protection (hidden from real users via CSS) -->
+            <div class="hp-field" aria-hidden="true">
+                <label for="website">Website</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="notify-field">
+                <label for="email" class="visually-hidden">Email address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    placeholder="you@mission-control.com"
+                    aria-label="Email address"
+                />
+                <button type="submit" class="btn btn-primary btn-glow">
+                    Join Launch List
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </div>
+            <p class="notify-fine">
+                By subscribing you agree to receive launch updates. Unsubscribe anytime.
+            </p>
+        </form>
+    </div>
+</section>
+
+
+<!-- ============================================================= -->
+<!-- === SECTION 8 — FOOTER (#contact) ============================ -->
+<!-- ============================================================= -->
+<footer id="contact" class="section section-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Brand column -->
+            <div class="footer-brand">
+                <a href="#home" class="nav-brand" aria-label="NOVARA SYSTEMS — Home">
+                    <svg class="nav-logo" viewBox="0 0 40 40" aria-hidden="true">
+                        <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.6"/>
+                        <ellipse cx="20" cy="20" rx="18" ry="7" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4" transform="rotate(25 20 20)"/>
+                        <path d="M13 28V12l14 16V12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="nav-wordmark">NOVARA <span class="nav-wordmark-dim">SYSTEMS</span></span>
+                </a>
+                <p class="footer-tagline">Engineering Tomorrow's Signal.</p>
+                <div class="footer-social" aria-label="Social links">
+                    <a href="#" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h3l-7 8 8 12h-6l-5-7-6 7H2l8-9L2 2h6l4 6z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 014 0v4M12 13v4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    <a href="#" aria-label="GitHub">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 00-3 19.5c.5.1.7-.2.7-.5v-2c-3 .6-3.5-1-3.5-1-.5-1-1-1.5-1-1.5-1-.5.1-.5.1-.5 1 .1 1.5 1 1.5 1 1 1.5 2.5 1 3 .5.1-.5.3-1 .6-1.5-2-.5-4-1-4-4 0-1 .5-2 1-2.5 0-.5-.5-1.5.1-3 0 0 1 0 2 1.5a6 6 0 014 0c1-1.5 2-1.5 2-1.5.5 1.5.1 2.5 0 3 .6.5 1 1.5 1 2.5 0 3-2 3.5-4 4 .5.5.8 1 .8 2v3c0 .3.2.6.7.5A10 10 0 0012 2z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sitemap column -->
+            <nav class="footer-col" aria-label="Site">
+                <h4 class="footer-col-title">Navigate</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">Capabilities</a></li>
+                    <li><a href="#stats">By the Numbers</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#vision">Vision</a></li>
+                    <li><a href="#process">Process</a></li>
+                </ul>
+            </nav>
+
+            <!-- Contact column -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Contact</h4>
+                <ul>
+                    <li><a href="mailto:launch@novara.systems">launch@novara.systems</a></li>
+                    <li>NOVARA Systems, Inc.</li>
+                    <li>Vandenberg SFB, CA</li>
+                    <li>United States</li>
+                </ul>
+            </div>
+
+            <!-- Status column -->
+            <div class="footer-col">
+                <h4 class="footer-col-title">Status</h4>
+                <ul>
+                    <li><span class="footer-status-dot"></span> Pre-Launch · Q3 2026</li>
+                    <li><a href="#notify">Join Launch List →</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 NOVARA Systems, Inc. All rights reserved.</span>
+            <span class="footer-bottom-meta">Built in the dark. Shipped in the light.</span>
+        </div>
+    </div>
+</footer>
+
+</main>
+
+</body>
+</html>
